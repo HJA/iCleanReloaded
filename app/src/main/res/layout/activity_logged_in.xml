@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/logged_in_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/logged_in_feedback"
+            android:gravity="center"
+            android:text="You are logged in with\n#"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginTop="100dp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="100dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/name_ET"
+                android:hint="Name"
+                android:background="@drawable/login_text_field"
+                android:paddingLeft="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:singleLine="true"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/email_ET"
+                android:hint="E-mail"
+                android:background="@drawable/login_text_field"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:singleLine="true"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/register_password_ET"
+                android:hint="Password"
+                android:background="@drawable/login_text_field"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="15dp"
+                android:password="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:singleLine="true"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/phone_ET"
+                android:hint="Phone Number"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/login_text_field"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:singleLine="true"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/logged_in_next_btn"
+        android:id="@+id/logged_in_next_btn"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>
