@@ -2,6 +2,7 @@ package com.citrusbits.hassan.icleanreloaded;
 
 import android.app.Fragment;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,6 +39,9 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
 
     public static final String KEY_SOCIAL = "Social";
 
+    SharedPreferences sharedpreferences;
+    public static final String mypreference = "mypref";
+
     private EditText editTextName;
     private EditText editTextEmail;
     private EditText editTextPassword;
@@ -55,6 +59,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
     private String email;
     private String password;
     private String number;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -128,11 +133,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
             }
         };
     }
-    private void openProfile() {
 
-        Toast.makeText(getActivity(), "Registered Successfully!", Toast.LENGTH_LONG).show();
-
-    }
     @Override
     public void onClick (View v){
 
@@ -147,11 +148,6 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
             if (name.isEmpty() || email.isEmpty()|| password.isEmpty()|| number.isEmpty()) {
                 Toast.makeText(getActivity(), "Invalid Input", Toast.LENGTH_SHORT).show();
             }else {
-                /*String name = editTextName.getText().toString().trim();
-                String email = editTextEmail.getText().toString().trim();
-                String password = editTextPassword.getText().toString().trim();
-                String number = editTextNumber.getText().toString().trim();*/
-
                 registerUser(name, email, password, number, token, type);
             }
         }
@@ -202,5 +198,8 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
         // Activity that it triggered.
         loginButton.onActivityResult(requestCode, resultCode, data);
     }
+
+
+
 }
 

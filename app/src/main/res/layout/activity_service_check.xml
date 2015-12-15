@@ -7,15 +7,17 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/register_top_nav"/>
+        android:background="@drawable/register_top_nav" />
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/register_bg">
+        android:background="@drawable/register_bg"
+        android:orientation="vertical"
+        android:gravity="bottom">
 
         <EditText
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/zipcode_ET"
             android:hint="What is your Zip Code?"
@@ -25,19 +27,18 @@
             android:singleLine="true"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:layout_above="@+id/service_check_register_btn"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="100dp" />
+            android:layout_marginBottom="80dp"/>
 
         <ImageButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/register_register_btn"
             android:id="@+id/service_check_register_btn"
-            android:layout_alignParentBottom="true"/>
+            android:layout_alignParentBottom="true" />
 
 
 
-    </RelativeLayout>
+    </LinearLayout>
 </LinearLayout>
 

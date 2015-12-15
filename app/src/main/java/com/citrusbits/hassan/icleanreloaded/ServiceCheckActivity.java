@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.android.volley.Request.Method;
@@ -23,6 +24,7 @@ public class ServiceCheckActivity extends Activity implements View.OnClickListen
     public static final String KEY_ZIPCODE = "ic_zip";
 
     EditText zipcode;
+    ImageButton serviceCheckRegisterButton;
     private String username = "Touseef";
 
     @Override
@@ -31,7 +33,10 @@ public class ServiceCheckActivity extends Activity implements View.OnClickListen
         setContentView(R.layout.activity_service_check);
 
         zipcode = (EditText) findViewById(R.id.zipcode_ET);
-        zipcode.setOnClickListener(ServiceCheckActivity.this);
+
+        serviceCheckRegisterButton = (ImageButton) findViewById(R.id.service_check_register_btn);
+        serviceCheckRegisterButton.setOnClickListener(ServiceCheckActivity.this);
+
     }
 
     private void serviceCheck(final String name, final String zipcode){
@@ -45,7 +50,7 @@ public class ServiceCheckActivity extends Activity implements View.OnClickListen
         GsonRequest<ServiceCheckResponse> myReq = new GsonRequest<ServiceCheckResponse>(
                 Method.POST, SERVICE_CHECK_URL, ServiceCheckResponse.class, map,
                 successListener(), errorListener());
-                requestQueue.add(myReq);
+        requestQueue.add(myReq);
     }
 
     private Response.Listener<ServiceCheckResponse> successListener() {
@@ -79,16 +84,22 @@ public class ServiceCheckActivity extends Activity implements View.OnClickListen
             }
         };
     }
+
     @Override
     public void onClick(View v) {
+        String zip = zipcode.getText().toString().trim();
 
-        if (v.getId() == R.id.service_check_register_btn){
+        if (v.getId() == R.id.service_check_register_btn) {
 
-            String zip = zipcode.getText().toString().trim();
+            Toast.makeText(ServiceCheckActivity.this,"I was clicked!", Toast.LENGTH_LONG).show();
 
-            serviceCheck(username,zip);
+            if (zip.isEmpty()) {
+                Toast.makeText(ServiceCheckActivity.this, "Invalid Input", Toast.LENGTH_SHORT).show();
+            } else {
+
+                serviceCheck(username, zip);
+            }
 
         }
-
     }
 }

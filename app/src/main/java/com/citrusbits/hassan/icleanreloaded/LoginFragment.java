@@ -110,7 +110,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
 
         if (v.getId() == R.id.login_btn) {
 
-            if (email.matches("") || password.matches("")) {
+            if (email.isEmpty() || password.isEmpty()) {
             Toast.makeText(getActivity(), "Invalid Input", Toast.LENGTH_SHORT).show();
             }else {
                 userLogin(email, password, type, token);

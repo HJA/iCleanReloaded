@@ -1,10 +1,10 @@
 package com.citrusbits.hassan.icleanreloaded;
 
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class RegisterResponse {
+
     @SerializedName("status")
     @Expose
     private Integer status;
@@ -13,47 +13,59 @@ public class RegisterResponse {
     private String message;
     @SerializedName("data")
     @Expose
-    private Object data;
+    private RegisterResponseData data;
 
     /**
-     * @return The status
+     *
+     * @return
+     * The status
      */
     public Integer getStatus() {
         return status;
     }
 
     /**
-     * @param status The status
+     *
+     * @param status
+     * The status
      */
     public void setStatus(Integer status) {
         this.status = status;
     }
 
     /**
-     * @return The message
+     *
+     * @return
+     * The message
      */
     public String getMessage() {
         return message;
     }
 
     /**
-     * @param message The message
+     *
+     * @param message
+     * The message
      */
     public void setMessage(String message) {
         this.message = message;
     }
 
     /**
-     * @return The data
+     *
+     * @return
+     * The data
      */
-    public Object getData() {
+    public RegisterResponseData getData() {
         return data;
     }
 
     /**
-     * @param data The data
+     *
+     * @param data
+     * The data
      */
-    public void setData(Object data) {
+    public void setData(RegisterResponseData data) {
         this.data = data;
     }
 
