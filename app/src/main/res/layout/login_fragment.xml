@@ -16,7 +16,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/email_ET"
+            android:id="@+id/login_email_ET"
             android:hint="E-mail"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/login_text_field"

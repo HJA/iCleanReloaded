@@ -45,18 +45,21 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
 
         View rootView = inflater.inflate(R.layout.login_fragment, container, false);
 
-        editTextEmail = (EditText) rootView.findViewById(R.id.email_ET);
+        editTextEmail = (EditText) rootView.findViewById(R.id.login_email_ET);
+        String email = editTextEmail.getText().toString();
         editTextPassword = (EditText) rootView.findViewById(R.id.password_ET);
+        String password = editTextPassword.getText().toString();
 
-        buttonLogin = (ImageButton) rootView.findViewById(R.id.login_btn);
-        buttonLogin.setOnClickListener(LoginFragment.this);
 
-        loginFacebook = (ImageButton) rootView.findViewById(R.id.facebook);
-        loginFacebook.setOnClickListener(LoginFragment.this);
+            buttonLogin = (ImageButton) rootView.findViewById(R.id.login_btn);
+            buttonLogin.setOnClickListener(LoginFragment.this);
 
-        loginTwitter = (ImageButton) rootView.findViewById(R.id.twitter);
-        loginTwitter.setOnClickListener(LoginFragment.this);
+            loginFacebook = (ImageButton) rootView.findViewById(R.id.facebook);
+            loginFacebook.setOnClickListener(LoginFragment.this);
 
+            loginTwitter = (ImageButton) rootView.findViewById(R.id.twitter);
+            loginTwitter.setOnClickListener(LoginFragment.this);
+        /*}*/
         return rootView;
     }
     private void userLogin(final String email, final String password, final String type, final String token) {
@@ -106,7 +109,12 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
         String password = editTextPassword.getText().toString().trim();
 
         if (v.getId() == R.id.login_btn) {
-            userLogin(email, password, type, token);
+
+            if (email.matches("") || password.matches("")) {
+            Toast.makeText(getActivity(), "Invalid Input", Toast.LENGTH_SHORT).show();
+            }else {
+                userLogin(email, password, type, token);
+            }
         }
     }
 }

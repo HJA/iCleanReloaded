@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="50dp">
+            android:layout_marginTop="30dp">
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -38,7 +38,7 @@
                 android:background="@drawable/login_facebook_btn"
                 android:layout_centerVertical="true"
                 android:id="@+id/facebook"
-                android:layout_marginBottom="40dp"/>
+                android:layout_marginBottom="20dp"/>
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -48,7 +48,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="70dp"
                 android:layout_toRightOf="@id/facebook"
-                android:layout_marginBottom="40dp"/>
+                android:layout_marginBottom="20dp"/>
         </LinearLayout>
 
     </RelativeLayout>

@@ -48,11 +48,13 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
     private ImageButton registerTwitter;
     private TwitterLoginButton loginButton;
 
-
-
     private String type = "ic";
     private String token = "1234";
 
+    private String name;
+    private String email;
+    private String password;
+    private String number;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -134,14 +136,24 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick (View v){
 
-        if(v.getId() == R.id.register_register_btn){
 
-            String name = editTextName.getText().toString().trim();
-            String email = editTextEmail.getText().toString().trim();
-            String password = editTextPassword.getText().toString().trim();
-            String number = editTextNumber.getText().toString().trim();
+        if (v.getId() == R.id.register_register_btn) {
 
-            registerUser(name, email, password, number, token, type);
+            name = editTextName.getText().toString().trim();
+            email = editTextEmail.getText().toString().trim();
+            password = editTextPassword.getText().toString().trim();
+            number = editTextNumber.getText().toString().trim();
+
+            if (name.isEmpty() || email.isEmpty()|| password.isEmpty()|| number.isEmpty()) {
+                Toast.makeText(getActivity(), "Invalid Input", Toast.LENGTH_SHORT).show();
+            }else {
+                /*String name = editTextName.getText().toString().trim();
+                String email = editTextEmail.getText().toString().trim();
+                String password = editTextPassword.getText().toString().trim();
+                String number = editTextNumber.getText().toString().trim();*/
+
+                registerUser(name, email, password, number, token, type);
+            }
         }
         if(v.getId() == R.id.facebook) {
 
