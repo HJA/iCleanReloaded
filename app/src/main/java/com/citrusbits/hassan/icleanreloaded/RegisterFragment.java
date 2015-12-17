@@ -1,6 +1,7 @@
 package com.citrusbits.hassan.icleanreloaded;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -38,6 +39,9 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
     public static final String KEY_TOKEN = "ic_token";
 
     public static final String KEY_SOCIAL = "Social";
+    public static final String KEY_USER_ID = "ic_user_id";
+
+    public static final String KEY_PROMO = "ic_promocode";
 
     SharedPreferences sharedpreferences;
     public static final String mypreference = "mypref";
@@ -110,6 +114,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
 
                 if (response.getStatus() == 201) {
 
+                    Save(response.getData());
                     Intent loggedIn = new Intent(getActivity(), ServiceCheckActivity.class);
                     startActivity(loggedIn);
 
@@ -199,7 +204,28 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
         loginButton.onActivityResult(requestCode, resultCode, data);
     }
 
+    public void Save(RegisterResponseData data) {
 
+        sharedpreferences = getActivity().getSharedPreferences(mypreference,
+                Context.MODE_PRIVATE);
 
+        Integer user_id = data.getIcUserId();
+        String name = data.getIcName();
+        String email = data.getIcEmail();
+        String phone = data.getIcPhone();
+        String type = data.getIcType();
+        String promo = data.getIcPromocode();
+
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+
+        editor.putInt(KEY_USER_ID, user_id);
+        editor.putString(KEY_NAME, name);
+        editor.putString(KEY_EMAIL, email);
+        editor.putString(KEY_PHONE_NUMBER, phone);
+        editor.putString(KEY_TYPE, type);
+        editor.putString(KEY_PROMO, promo);
+
+        editor.commit();
+    }
 }
 

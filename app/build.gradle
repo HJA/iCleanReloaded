@@ -27,7 +27,7 @@ android {
         versionName "1.0"
 
         // Enabling multidex support.
-        multiDexEnabled true
+        /*multiDexEnabled true*/
     }
     buildTypes {
         release {
@@ -38,7 +38,7 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:multidex:1.0.0'
+    /*compile 'com.android.support:multidex:1.0.0'*/
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.1'

@@ -1,7 +1,9 @@
 package com.citrusbits.hassan.icleanreloaded;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -24,8 +26,11 @@ public class ServiceCheckActivity extends Activity implements View.OnClickListen
     public static final String KEY_ZIPCODE = "ic_zip";
 
     EditText zipcode;
+    String user_id;
     ImageButton serviceCheckRegisterButton;
-    private String username = "Touseef";
+
+    public static final String mypreference = "mypref";
+    SharedPreferences sharedpreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,15 +42,24 @@ public class ServiceCheckActivity extends Activity implements View.OnClickListen
         serviceCheckRegisterButton = (ImageButton) findViewById(R.id.service_check_register_btn);
         serviceCheckRegisterButton.setOnClickListener(ServiceCheckActivity.this);
 
+        sharedpreferences = getSharedPreferences(mypreference,
+                Context.MODE_PRIVATE);
+
+        if (sharedpreferences.contains(RegisterFragment.KEY_USER_ID)) {
+            user_id = String.valueOf(sharedpreferences.getInt(RegisterFragment.KEY_USER_ID, 0));
+
+        }
     }
 
-    private void serviceCheck(final String name, final String zipcode){
+    private void serviceCheck(final String user_id, final String zipcode){
 
         RequestQueue requestQueue = Volley.newRequestQueue(ServiceCheckActivity.this);
 
         Map<String, String> map = new HashMap<String, String>();
 
+        map.put(RegisterFragment.KEY_USER_ID, user_id);
         map.put(KEY_ZIPCODE, zipcode);
+
 
         GsonRequest<ServiceCheckResponse> myReq = new GsonRequest<ServiceCheckResponse>(
                 Method.POST, SERVICE_CHECK_URL, ServiceCheckResponse.class, map,
@@ -60,15 +74,12 @@ public class ServiceCheckActivity extends Activity implements View.OnClickListen
             public void onResponse(ServiceCheckResponse response) {
 
                 if (response.getStatus() == 200) {
-
                     Intent loggedIn = new Intent(ServiceCheckActivity.this, YesServiceActivity.class);
                     startActivity(loggedIn);
                 }
                 else {
-                    Toast.makeText(ServiceCheckActivity.this, response.getMessage(),
-                            Toast.LENGTH_LONG).show();
-                    /*Intent loggedIn = new Intent(ServiceCheckActivity.this, NoServiceActivity.class);
-                    startActivity(loggedIn);*/
+                    Intent loggedIn = new Intent(ServiceCheckActivity.this, NoServiceActivity.class);
+                    startActivity(loggedIn);
                 }
             }
         };
@@ -91,13 +102,10 @@ public class ServiceCheckActivity extends Activity implements View.OnClickListen
 
         if (v.getId() == R.id.service_check_register_btn) {
 
-            Toast.makeText(ServiceCheckActivity.this,"I was clicked!", Toast.LENGTH_LONG).show();
-
             if (zip.isEmpty()) {
                 Toast.makeText(ServiceCheckActivity.this, "Invalid Input", Toast.LENGTH_SHORT).show();
             } else {
-
-                serviceCheck(username, zip);
+                serviceCheck(user_id, zip);
             }
 
         }
