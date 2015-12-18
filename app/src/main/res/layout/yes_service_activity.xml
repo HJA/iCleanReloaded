@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/yes_service_btn"
-            android:id="@+id/okay_btn"
+            android:id="@+id/yesservice_okay_btn"
             android:layout_alignParentBottom="true"/>
 
     </RelativeLayout>
