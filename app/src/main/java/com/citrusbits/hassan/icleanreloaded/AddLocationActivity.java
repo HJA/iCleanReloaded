@@ -45,6 +45,7 @@ public class AddLocationActivity extends Activity implements AdapterView.OnItemC
 
     //------------ make your specific key ------------
     private static final String API_KEY = "AIzaSyAU9ShujnIg3IDQxtPr7Q1qOvFVdwNmWc4";
+    private GooglePlacesAutocompleteAdapter autoCompleteAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +55,8 @@ public class AddLocationActivity extends Activity implements AdapterView.OnItemC
         AutoCompleteTextView address1_ET = (AutoCompleteTextView) findViewById(R.id.address1_ET);
         AutoCompleteTextView address2_ET = (AutoCompleteTextView) findViewById(R.id.address2_ET);
 
-        address1_ET.setAdapter(new AddLocationActivity(this, R.layout.list_item));
+        autoCompleteAdapter = new GooglePlacesAutocompleteAdapter(this,R.layout.list_item);
+        address1_ET.setAdapter(autoCompleteAdapter);
         address1_ET.setOnItemClickListener(this);
 
         add_location_add_btn = (ImageButton) findViewById(R.id.add_location_add_btn);
@@ -99,7 +101,6 @@ public class AddLocationActivity extends Activity implements AdapterView.OnItemC
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             String str = (String) parent.getItemAtPosition(position);
 		/*Toast.makeText(this, str, Toast.LENGTH_SHORT).show();*/
-
     }
 
     public  ArrayList<String> autocomplete(String input) {
@@ -139,7 +140,7 @@ public class AddLocationActivity extends Activity implements AdapterView.OnItemC
 
         try {
 
-            // Create a JSON object hierarchy from the results
+            /*// Create a JSON object hierarchy from the results
             AddLocationActivity.this.runOnUiThread(new Runnable() {
 
                 @Override
@@ -147,8 +148,7 @@ public class AddLocationActivity extends Activity implements AdapterView.OnItemC
                     // TODO Auto-generated method stub
                     Toast.makeText(AddLocationActivity.this.getApplicationContext(), jsonResults.toString(), Toast.LENGTH_LONG).show();
                 }
-            });
-
+            });*/
 
             JSONObject jsonObj = new JSONObject(jsonResults.toString());
             JSONArray predsJsonArray = jsonObj.getJSONArray("predictions");
