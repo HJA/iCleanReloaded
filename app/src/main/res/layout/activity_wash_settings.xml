@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/wash_settings_top_nav" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/wash_settings_skip_icon"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:id="@+id/add_card_skip_icon"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/add_card_back_icon"
+            android:background="@drawable/wash_settings_back_icon"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/wash_settings_bg">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="How would you like\n your wash and fold?"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginTop="100dp"/>
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/wash_settings_next_btn"/>
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:id="@+id/recommended_wash"
+            android:background="@drawable/wash_settings_container_active"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text ="iClean Recommended \nWash"
+            android:layout_centerVertical="true"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginLeft="100dp"
+            android:paddingTop="5dp"
+            android:id="@+id/wash"
+            android:paddingRight="10dp"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@id/wash"
+            android:layout_centerVertical="true"
+            android:background="@drawable/wash_settings_info_divider"
+            android:id="@+id/info_divider"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@id/info_divider"
+            android:layout_centerVertical="true"
+            android:background="@drawable/wash_settings_info_icon" />
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/recommended_wash"
+            android:background="@drawable/wash_settings_container"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text ="Create My Wash \nSettings"
+            android:layout_below="@id/recommended_wash"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginLeft="100dp"
+            android:paddingTop="5dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>
