@@ -75,6 +75,17 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/state_ET"
+            android:hint="State"
+            android:background="@drawable/add_location_text_field"
+            android:paddingLeft="15dp"
+            android:singleLine="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="15dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/city_ET"
             android:hint="City"
             android:background="@drawable/add_location_text_field"

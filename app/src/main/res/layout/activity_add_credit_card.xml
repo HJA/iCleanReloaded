@@ -86,7 +86,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="5">
+            android:weightSum="3">
 
             <EditText
                 android:layout_width="wrap_content"
@@ -105,12 +105,12 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/add_card_cvv_ET"
                 android:hint="CVV"
-                android:background="@drawable/add_card_text_field"
+                android:background="@drawable/add_card_cvv_field"
                 android:paddingLeft="15dp"
                 android:singleLine="true"
                 android:layout_centerVertical="true"
                 android:layout_marginTop="15dp"
-                android:layout_weight="3"
+                android:layout_weight="1"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="30dp"/>
 
