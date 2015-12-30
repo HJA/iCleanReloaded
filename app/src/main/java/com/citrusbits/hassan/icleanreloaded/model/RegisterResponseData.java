@@ -1,4 +1,4 @@
-package com.citrusbits.hassan.icleanreloaded;
+package com.citrusbits.hassan.icleanreloaded.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

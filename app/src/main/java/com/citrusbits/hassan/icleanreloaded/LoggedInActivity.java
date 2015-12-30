@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.citrusbits.hassan.icleanreloaded.fragments.RegisterFragment;
 import com.twitter.sdk.android.core.identity.TwitterLoginButton;
 
 public class LoggedInActivity extends Activity implements View.OnClickListener {

@@ -10,7 +10,7 @@ public class AddCreditCardActivity extends Activity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_credit_card_activity);
+        setContentView(R.layout.activity_add_credit_card);
 
         ImageButton back_button = (ImageButton) findViewById(R.id.add_card_back_icon);
         back_button.setOnClickListener(this);

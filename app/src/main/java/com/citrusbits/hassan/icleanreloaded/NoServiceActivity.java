@@ -15,7 +15,7 @@ public class NoServiceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.no_service_activity);
+        setContentView(R.layout.activity_no_service);
 
         noservice_okay_btn = (ImageButton) findViewById(R.id.noservice_okay_btn);
 

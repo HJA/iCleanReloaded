@@ -13,7 +13,7 @@ public class YesServiceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.yes_service_activity);
+        setContentView(R.layout.activity_yes_service);
 
         yesservice_okay_btn = (ImageButton) findViewById(R.id.yesservice_okay_btn);
 

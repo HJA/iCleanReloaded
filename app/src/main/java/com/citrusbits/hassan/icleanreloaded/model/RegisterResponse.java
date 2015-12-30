@@ -1,9 +1,9 @@
-package com.citrusbits.hassan.icleanreloaded;
+package com.citrusbits.hassan.icleanreloaded.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class ServiceCheckResponse {
+public class RegisterResponse {
 
     @SerializedName("status")
     @Expose
@@ -13,7 +13,7 @@ public class ServiceCheckResponse {
     private String message;
     @SerializedName("data")
     @Expose
-    private Object data;
+    private RegisterResponseData data;
 
     /**
      *
@@ -56,7 +56,7 @@ public class ServiceCheckResponse {
      * @return
      * The data
      */
-    public Object getData() {
+    public RegisterResponseData getData() {
         return data;
     }
 
@@ -65,7 +65,7 @@ public class ServiceCheckResponse {
      * @param data
      * The data
      */
-    public void setData(Object data) {
+    public void setData(RegisterResponseData data) {
         this.data = data;
     }
 

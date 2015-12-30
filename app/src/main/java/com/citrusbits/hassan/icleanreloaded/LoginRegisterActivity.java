@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.citrusbits.hassan.icleanreloaded.fragments.LoginFragment;
+import com.citrusbits.hassan.icleanreloaded.fragments.RegisterFragment;
+
 public class LoginRegisterActivity extends Activity implements View.OnClickListener {
 
     //UI variables
