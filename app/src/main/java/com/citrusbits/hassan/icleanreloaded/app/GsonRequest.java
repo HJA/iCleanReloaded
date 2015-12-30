@@ -1,4 +1,4 @@
-package com.citrusbits.hassan.icleanreloaded;
+package com.citrusbits.hassan.icleanreloaded.app;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Map;

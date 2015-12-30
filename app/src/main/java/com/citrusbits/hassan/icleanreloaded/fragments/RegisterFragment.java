@@ -1,4 +1,4 @@
-package com.citrusbits.hassan.icleanreloaded;
+package com.citrusbits.hassan.icleanreloaded.fragments;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -17,6 +17,12 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
+import com.citrusbits.hassan.icleanreloaded.app.GsonRequest;
+import com.citrusbits.hassan.icleanreloaded.LoggedInActivity;
+import com.citrusbits.hassan.icleanreloaded.R;
+import com.citrusbits.hassan.icleanreloaded.model.RegisterResponse;
+import com.citrusbits.hassan.icleanreloaded.model.RegisterResponseData;
+import com.citrusbits.hassan.icleanreloaded.ServiceCheckActivity;
 import com.twitter.sdk.android.core.identity.TwitterLoginButton;
 
 import java.util.HashMap;
@@ -67,7 +73,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.register_fragment, container, false);
+        View view = inflater.inflate(R.layout.fragment_register, container, false);
 
         editTextName =(EditText) view.findViewById(R.id.name_ET);
         editTextEmail =(EditText) view.findViewById(R.id.email_ET);

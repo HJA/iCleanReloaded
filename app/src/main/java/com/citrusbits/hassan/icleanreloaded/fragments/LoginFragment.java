@@ -1,4 +1,4 @@
-package com.citrusbits.hassan.icleanreloaded;
+package com.citrusbits.hassan.icleanreloaded.fragments;
 
 import android.app.Fragment;
 import android.content.Intent;
@@ -17,6 +17,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.citrusbits.hassan.icleanreloaded.OrdersActivity;
+import com.citrusbits.hassan.icleanreloaded.R;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -43,7 +45,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.login_fragment, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_login, container, false);
 
         editTextEmail = (EditText) rootView.findViewById(R.id.login_email_ET);
         String email = editTextEmail.getText().toString();
@@ -51,14 +53,14 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
         String password = editTextPassword.getText().toString();
 
 
-            buttonLogin = (ImageButton) rootView.findViewById(R.id.login_btn);
-            buttonLogin.setOnClickListener(LoginFragment.this);
+        buttonLogin = (ImageButton) rootView.findViewById(R.id.login_btn);
+        buttonLogin.setOnClickListener(LoginFragment.this);
 
-            loginFacebook = (ImageButton) rootView.findViewById(R.id.facebook);
-            loginFacebook.setOnClickListener(LoginFragment.this);
+        loginFacebook = (ImageButton) rootView.findViewById(R.id.facebook);
+        loginFacebook.setOnClickListener(LoginFragment.this);
 
-            loginTwitter = (ImageButton) rootView.findViewById(R.id.twitter);
-            loginTwitter.setOnClickListener(LoginFragment.this);
+        loginTwitter = (ImageButton) rootView.findViewById(R.id.twitter);
+        loginTwitter.setOnClickListener(LoginFragment.this);
         /*}*/
         return rootView;
     }
@@ -111,7 +113,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener{
         if (v.getId() == R.id.login_btn) {
 
             if (email.isEmpty() || password.isEmpty()) {
-            Toast.makeText(getActivity(), "Invalid Input", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Invalid Input", Toast.LENGTH_SHORT).show();
             }else {
                 userLogin(email, password, type, token);
             }
