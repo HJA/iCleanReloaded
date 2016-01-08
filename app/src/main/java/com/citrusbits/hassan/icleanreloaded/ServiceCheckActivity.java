@@ -17,7 +17,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
 import com.citrusbits.hassan.icleanreloaded.app.GsonRequest;
 import com.citrusbits.hassan.icleanreloaded.fragments.RegisterFragment;
-import com.citrusbits.hassan.icleanreloaded.model.ServiceCheckResponse;
+import com.citrusbits.hassan.icleanreloaded.pojo.ServiceCheckResponse;
 
 import java.util.HashMap;
 import java.util.Map;

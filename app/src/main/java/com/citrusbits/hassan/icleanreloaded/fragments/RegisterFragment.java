@@ -20,8 +20,8 @@ import com.android.volley.toolbox.Volley;
 import com.citrusbits.hassan.icleanreloaded.app.GsonRequest;
 import com.citrusbits.hassan.icleanreloaded.LoggedInActivity;
 import com.citrusbits.hassan.icleanreloaded.R;
-import com.citrusbits.hassan.icleanreloaded.model.RegisterResponse;
-import com.citrusbits.hassan.icleanreloaded.model.RegisterResponseData;
+import com.citrusbits.hassan.icleanreloaded.pojo.RegisterResponse;
+import com.citrusbits.hassan.icleanreloaded.pojo.RegisterResponseData;
 import com.citrusbits.hassan.icleanreloaded.ServiceCheckActivity;
 import com.twitter.sdk.android.core.identity.TwitterLoginButton;
 

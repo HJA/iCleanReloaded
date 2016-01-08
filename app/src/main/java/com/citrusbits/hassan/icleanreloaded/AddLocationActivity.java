@@ -23,7 +23,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
 import com.citrusbits.hassan.icleanreloaded.app.GsonRequest;
 import com.citrusbits.hassan.icleanreloaded.fragments.RegisterFragment;
-import com.citrusbits.hassan.icleanreloaded.model.AddLocationResponse;
+import com.citrusbits.hassan.icleanreloaded.pojo.AddLocationResponse;
 
 import org.json.JSONArray;
 import org.json.JSONException;
